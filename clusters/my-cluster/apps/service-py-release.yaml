@@ -16,8 +16,8 @@ spec:
   values:
     # Переопределяем значения из values.yaml чарта
     image:
-      repository: nginx:1.25
-      tag: alpine
+      repository: nginx
+      tag: "1.25"
     replicaCount: 1
     postgresql:
       host: "postgresql" 
