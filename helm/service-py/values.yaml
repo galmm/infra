@@ -1,7 +1,7 @@
 replicaCount: 2
 image:
-  repository: your-registry/service-py
-  tag: latest
+  repository: nginx
+  tag: "1.25"
   pullPolicy: IfNotPresent
 service:
   type: ClusterIP
