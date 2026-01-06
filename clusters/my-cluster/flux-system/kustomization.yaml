@@ -5,3 +5,4 @@ resources:
   - gotk-sync.yaml
   - ../apps/service-py-release.yaml
   - ../apps/service-go-release.yaml
+  - ../infrastructure/
