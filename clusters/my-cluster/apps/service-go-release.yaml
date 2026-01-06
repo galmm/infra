@@ -1,4 +1,5 @@
-apiVersion: helm.toolkit.fluxcd.io/v2beta1
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: service-go
@@ -7,12 +8,11 @@ spec:
   interval: 5m
   chart:
     spec:
-      chart: helm/service-go 
+      chart: helm/service-go
       sourceRef:
         kind: GitRepository
         name: flux-system
         namespace: flux-system
-      interval: 1m
   values:
     image:
       repository: nginx
