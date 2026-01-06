@@ -1,9 +1,9 @@
 replicaCount: 1
 image:
-  repository: nginxdemos/hello
-  tag: latest
+  repository: ghcr.io/galmm/app/service-go
+  tag: 3bf580fc0ed31facd37038a651901ab7f8619688
   pullPolicy: IfNotPresent
 service:
   type: ClusterIP
-  port: 80  # nginxdemos/hello использует порт 80
-resources: {}  # Пока без ограничений ресурсов
+  port: 80 # nginxdemos/hello использует порт 80
+resources: {} # Пока без ограничений ресурсов
