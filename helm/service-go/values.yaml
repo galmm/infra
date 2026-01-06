@@ -1,18 +1,9 @@
 replicaCount: 1
-
 image:
-  repository: nginx  # ВРЕМЕННО для теста
-  tag: alpine
+  repository: nginxdemos/hello
+  tag: latest
   pullPolicy: IfNotPresent
-
 service:
   type: ClusterIP
-  port: 8080
-
-resources:
-  requests:
-    memory: "128Mi"
-    cpu: "100m"
-  limits:
-    memory: "256Mi"
-    cpu: "500m"
+  port: 80  # nginxdemos/hello использует порт 80
+resources: {}  # Пока без ограничений ресурсов
