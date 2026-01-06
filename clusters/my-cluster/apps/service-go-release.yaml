@@ -10,7 +10,7 @@ spec:
       chart: helm/service-go 
       sourceRef:
         kind: GitRepository
-        name: infra
+        name: flux-system
         namespace: flux-system
       interval: 1m
   values:
