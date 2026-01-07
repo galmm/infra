@@ -1,0 +1,28 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: postgresql
+  namespace: default
+spec:
+  interval: 10m
+  chart:
+    spec:
+      chart: postgresql
+      version: "15.x.x"
+      sourceRef:
+        kind: HelmRepository
+        name: bitnami
+        namespace: flux-system
+  values:
+    auth:
+      username: service_user
+      database: orders_db
+      postgresPassword: "postgres_password"  # В продуктиве через Vault
+    primary:
+      persistence:
+        size: 5Gi
+      resources:
+        requests:
+          memory: "256Mi"
+          cpu: "250m"
