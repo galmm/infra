@@ -1,6 +1,7 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
+  # Пока только PostgreSQL и Redis
+  # MongoDB, Kafka, RabbitMQ добавим позже
   - postgresql-release.yaml
-  - mongodb-release.yaml
   - redis-release.yaml

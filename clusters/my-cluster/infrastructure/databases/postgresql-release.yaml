@@ -9,7 +9,6 @@ spec:
   chart:
     spec:
       chart: postgresql
-      version: "15.x.x"
       sourceRef:
         kind: HelmRepository
         name: bitnami
@@ -18,11 +17,7 @@ spec:
     auth:
       username: service_user
       database: orders_db
-      postgresPassword: "postgres_password"  # В продуктиве через Vault
+      postgresPassword: "test123"  # Для теста
     primary:
       persistence:
-        size: 5Gi
-      resources:
-        requests:
-          memory: "256Mi"
-          cpu: "250m"
+        enabled: false  # Для теста без persistent storage

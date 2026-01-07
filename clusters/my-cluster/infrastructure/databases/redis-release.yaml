@@ -9,7 +9,6 @@ spec:
   chart:
     spec:
       chart: redis
-      version: "19.x.x"
       sourceRef:
         kind: HelmRepository
         name: bitnami
@@ -17,11 +16,7 @@ spec:
   values:
     architecture: standalone
     auth:
-      enabled: false  # Для теста, в продуктиве включить
+      enabled: false
     master:
       persistence:
-        size: 2Gi
-      resources:
-        requests:
-          memory: "128Mi"
-          cpu: "100m"
+        enabled: false  # Для теста
