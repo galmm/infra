@@ -9,5 +9,4 @@ service:
 env:
   POSTGRES_HOST: "postgresql"
   POSTGRES_PORT: "5432"
-  KAFKA_BROKERS: "kafka:9092"
   REDIS_HOST: "redis-master"
