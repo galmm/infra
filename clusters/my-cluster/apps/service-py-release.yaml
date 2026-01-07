@@ -1,23 +1,15 @@
+---
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: service-py
-  namespace: default # Можно создать отдельный namespace, например, "microservices"
+  namespace: default
 spec:
-  interval: 5m # Проверять обновления каждые 5 минут
+  interval: 5m
   chart:
     spec:
-      chart: ./helm/service-py # Путь к чарту ОТНОСИТЕЛЬНО корня GitRepository
+      chart: helm/service-py  # ИСПРАВЛЕНО: убрал ./
       sourceRef:
         kind: GitRepository
         name: flux-system
         namespace: flux-system
-      interval: 1m
-  values:
-    # Переопределяем значения из values.yaml чарта
-    image:
-      repository: nginx
-      tag: "1.25"
-    replicaCount: 1
-    postgresql:
-      host: "postgresql" 

@@ -1,10 +1,10 @@
-apiVersion: source.toolkit.fluxcd.io/v1beta2
+apiVersion: source.toolkit.fluxcd.io/v1
 kind: GitRepository
 metadata:
-  name: infra
+  name: flux-system  # ИСПРАВЛЕНО: infra → flux-system
   namespace: flux-system
 spec:
   interval: 1m
   url: https://github.com/galmm/infra
   ref:
-    branch: main
+    branch: main  # ДОБАВЛЕНО
