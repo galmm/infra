@@ -22,8 +22,8 @@ spec:
         - containerPort: {{ .Values.service.port }}
         {{- if .Values.env }}
         env:
-        {{- range $key, $value := .Values.env }}
-        - name: {{ $key }}
-          value: {{ $value | quote }}
-        {{- end }}
+          {{- range $key, $value := .Values.env }}
+          - name: {{ $key }}
+            value: {{ $value | quote }}
+          {{- end }}
         {{- end }}
