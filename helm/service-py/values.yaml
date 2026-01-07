@@ -1,20 +1,13 @@
-replicaCount: 2
+replicaCount: 1
 image:
-  repository: ghcr.io/galmm/app/service-py
-  tag: "3bf580fc0ed31facd37038a651901ab7f8619688"
+  repository: nginx
+  tag: alpine
   pullPolicy: IfNotPresent
 service:
   type: ClusterIP
   port: 8080
-resources:
-  requests:
-    memory: "128Mi"
-    cpu: "100m"
-  limits:
-    memory: "256Mi"
-    cpu: "500m"
-postgresql:
-  host: "postgresql"
-  port: 5432
-  database: "orders"
-env: {}
+env:
+  POSTGRES_HOST: "postgresql"
+  POSTGRES_PORT: "5432"
+  KAFKA_BROKERS: "kafka:9092"
+  REDIS_HOST: "redis-master"

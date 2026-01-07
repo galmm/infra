@@ -1,9 +1,13 @@
 replicaCount: 1
 image:
-  repository: ghcr.io/galmm/app/service-go
-  tag: 3bf580fc0ed31facd37038a651901ab7f8619688
+  repository: nginx
+  tag: alpine
   pullPolicy: IfNotPresent
 service:
   type: ClusterIP
-  port: 80 # nginxdemos/hello использует порт 80
-resources: {} # Пока без ограничений ресурсов
+  port: 80  # nginx слушает на 80
+env:
+  MONGO_URI: "mongodb://mongodb:27017"
+  REDIS_HOST: "redis-master"
+  KAFKA_BROKERS: "kafka:9092"
+  RABBITMQ_URL: "amqp://guest:guest@rabbitmq:5672/"
