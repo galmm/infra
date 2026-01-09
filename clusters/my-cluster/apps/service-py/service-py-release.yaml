@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: service-py
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: service-py
+  template:
+    metadata:
+      labels:
+        app: service-py
+    spec:
+      containers:
+        - name: service-py
+          image: nginx
